@@ -1,0 +1,11 @@
+[{
+    "id": "right",
+    "imagen": "./resources/duckRigth.gif",
+    "clase":"right"
+},
+{
+    "id": "left",
+    "imagen": "./resources/duckLeft1.gif",
+    "clase":"left"
+}
+]

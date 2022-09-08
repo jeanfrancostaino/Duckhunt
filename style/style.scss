@@ -1,0 +1,412 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    font-family: 'Press Start 2p';
+    color: white;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    main{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        pointer-events: none;
+        .tv{
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: url(../resources/background.png);
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+            img{
+                position: absolute;
+                width: 100%;
+                height: 100vh;
+                pointer-events: none;
+            }
+            #marcoTv{
+                z-index: 5;
+            }
+            #crosshair{
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 100;
+                display: none;
+            }
+            #game{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                pointer-events: none;
+                filter: brightness(0);
+                input{
+                    position: absolute;
+                    z-index: 4;
+                }
+                #sky{
+                    position: absolute;
+                    pointer-events: none;
+                }
+                #grass{
+                    position: absolute;
+                    z-index: 3;
+                    pointer-events: none;
+                }
+                #dog{
+                    transform: translateY(20%);
+                    opacity: 0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+                .duckContainer{
+                    height: 70%;
+                    width: 50%;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    position: absolute;
+                    z-index: 2;
+                    pointer-events: none;
+                    overflow: hidden;
+                    img{
+                        width: 12%;
+                        height: 12%;
+                        bottom: 0%;
+                        pointer-events: all;
+                        z-index: 3;
+                    }
+                }
+                #start{
+                    display: none;
+                    width:300px;
+                    height: 32px;
+                    font-size: 1rem;
+                    background-color: transparent;
+                    border: none;
+                    left: 0;
+                    right: 0;
+                    bottom: 55%;
+                    margin: auto;
+                    z-index: 4;
+                    cursor: pointer;
+                    animation: tilt 2s linear 1s infinite;
+                    pointer-events: all;
+                    @keyframes tilt {
+                        0%{
+                            opacity: 1;
+                        }
+                        50%{
+                            opacity: 0;
+                        }
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+                #bullets{
+                    display: none;
+                    position: absolute;
+                    bottom: 25%;
+                    left: 30%;
+                    width: 10%;
+                    background-color: black;
+                    border: 5px solid green;
+                    font-size: 1rem;
+                    border-radius: 15px;
+                    padding:.5rem;
+                    pointer-events: none;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10;
+                    .bullet{
+                        position: relative;
+                        width: 20%;
+                        height: 80%;
+
+                    }
+                }
+                #score{
+                    display: none;
+                    bottom: 25%;
+                    right: 30%;
+                    background-color: black;
+                    border: 5px solid green;
+                    font-size: 1rem;
+                    border-radius: 15px;
+                    width: 10%;
+                    height: 50px;
+                    padding-left: .5rem;
+                    pointer-events: none;
+                }
+                #highScore{
+                display: none;
+                font-size: 1rem;
+                background-color: transparent;
+                border: none;
+                right: 25%;
+                top: 25%;
+                pointer-events: none;
+                }
+                #gameOver{
+                    position: absolute;
+                    width: 25%;
+                    height: 35%;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                    z-index: 100;
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 4rem;
+                    background-color: black;
+                    border: 15px solid green;
+                    border-radius: 30px;
+                    padding: 2rem;
+                    h3{
+                        font-size: 1rem;
+                        width: 50%;
+                        line-height: 1.5rem;
+                        text-align: center;
+                        input{
+                            background-color: transparent;
+                            width: 2.5rem;
+                            height: 1.5rem;
+                            font-size: 1rem;
+                            border: none;
+                        }
+                    }
+                    #record{
+                        position: absolute;
+                        text-align: center;
+                        color: red;
+                        right: 10%;
+                        top: 45%;
+                        font-size: .7rem;
+                        line-height: 1rem;
+                        visibility: hidden;
+                    }
+                    #restart{
+                        position: relative;
+                        background-color: transparent;
+                        pointer-events: all;
+                        cursor: pointer;
+                    }
+                }
+                #whiteScreen{
+                    z-index: 4;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                @media screen and (max-width:1600px) {
+                    #gameOver{
+                        width: 30%;
+                    }
+                }
+                @media screen and (max-width:1366px) {
+
+                        #score{
+                            font-size: .8rem;
+                            width: 130px;
+                        }
+                        #bullets{
+                            width: 10%;
+                        }
+                        #highScore{
+                            font-size: .8rem;
+                        }
+                        #gameOver{
+                            width: 30%;
+                            gap: 2rem;
+                            padding: 1rem;
+                            h3{
+                                font-size: .8rem;
+                            }
+                            #record{
+                                right: 2%;
+                            }
+                        }
+
+                }
+                @media screen and (max-height:750px) {
+                   #gameOver{
+                    height: 45%;
+                   }
+                }
+                @media screen and (max-height:500px) {
+                   #bullets{
+                    width: 10%;
+                    padding: 5px;
+                    } 
+                    #score{
+                        font-size: .6rem;
+                        height: 35px;
+                        width: 10%;
+                    }
+                    #start{
+                        font-size: .8rem;
+                    }
+                    #highScore{
+                        font-size: .6rem;
+                        right: 22%;
+                    }
+                    #gameOver{
+                        gap: 1rem;
+                        padding: 1rem;
+                        width: 35%;
+                        h2{
+                            font-size: 1rem;
+                        }
+                        h3{
+                            font-size: .6rem;
+                           input{
+                            font-size: .6rem;
+                           } 
+                        }
+                        #record{
+                            font-size: .5rem;
+                        }
+                        #restart{
+                            font-size: .8rem;
+                        }
+                    }
+                }
+                @media screen and (max-height:400px) {
+                    #bullets{
+                        font-size: .5rem;
+                        width: 90px;
+                        height: 30px;
+                        border: 3px solid green;
+                        border-radius: 10px;
+                     } 
+                     #score{
+                         font-size: .5rem;
+                         width: 90px;
+                         height: 30px;
+                         border: 3px solid green;
+                         border-radius: 10px;
+                     }
+                     #start{
+                         font-size: .6rem;
+                     }
+                     #highScore{
+                         font-size: .5rem;
+                         right: 20%;
+                     }
+                     #gameOver{
+                         gap: .8rem;
+                         padding: .5rem;
+                         height: 55%;
+                         width: 40%;
+                         border: 10px solid green;
+                        border-radius: 30px;
+                         h2{
+                             font-size: .8rem;
+                         }
+                         h3{
+                             font-size: .5rem;
+                            input{
+                             font-size: .5rem;
+                            } 
+                         }
+                         #record{
+                            right: 5%;
+                             font-size: .4rem;
+                         }
+                         #restart{
+                             font-size: .6rem;
+                         }
+                     }
+                 }
+            }
+        }
+    }
+    .turn{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+        z-index: 999;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        h2{
+            text-align: center;
+            line-height: 4.5rem;
+            font-size: 3rem;
+        }
+        .rotateI{
+            display: flex;
+            gap: 1rem;
+         .fa-arrow-right{
+            align-self: end;
+            font-size: 3rem;
+            animation: right 3s linear infinite;
+         }   
+         .fa-arrow-left{
+            align-self: start;
+            font-size: 3rem;
+            animation: left 3s linear infinite;
+         }   
+         .fa-mobile-screen-button{
+            font-size:150px;
+            animation: device 3s linear infinite;
+         }
+        }
+        @keyframes device {
+                0%{
+                    transform: rotate(0);
+                }
+                50%{
+                    transform: rotate(-90deg);
+                }
+                100%{
+                    transform: rotate(-90deg);
+                }
+        }
+        @keyframes left {
+            0%{
+                transform: translateX(0);
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+        }
+        @keyframes right {
+            0%{
+                transform: translateX(0);
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 0;
+                transform: translateX(50px);
+            }
+        }
+    }
+    @media screen and (max-width:1023px) and (min-height:500px) {
+        .turn{
+            display: flex;
+        }
+    }
+}

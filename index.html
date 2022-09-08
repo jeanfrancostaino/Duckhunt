@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon-32x32.png">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/caf1addcfe.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Duck Hunt | Game</title>
+</head>
+<body>
+    
+    <main>
+        <div class="tv">
+                <img src="./resources/marcoTv.png" id="marcoTv">
+                <img src="./resources/tv.png">                
+                <img src="./resources/crosshair.png" id="crosshair">
+            <div id="game" class="game">
+                <input type="button" value="START GAME" id="start">
+                <img src="./resources/sky.png" id="sky" class="sky">
+                <img src="./resources/dog.png" id="dog" class="dog">
+                <img src="./resources/grass.png" id="grass" class="grass">
+                <div class="duckContainer">
+    
+                </div>
+                <input type="text" value="HIGH SCORE:" class="counters" id="highScore">
+                <input type="text" value="SCORE:0" class="counters" id="score">
+                <div id="bullets">
+                    <img src="./resources/bullet.png" alt="bullet" class="bullet">
+                    <img src="./resources/bullet.png" alt="bullet" class="bullet">
+                    <img src="./resources/bullet.png" alt="bullet" class="bullet">
+                    <img src="./resources/bullet.png" alt="bullet" class="bullet">
+                    <img src="./resources/bullet.png" alt="bullet" class="bullet">
+                </div>
+                <div class="gameOver" id="gameOver">
+                    <h2>GAME OVER</h2>
+                    <h3>YOUR FINAL SCORE IS: <input type="text" value="0" id="finalScore"></h3>
+                    <p id="record">NEW <br> RECORD!</p>
+                    <input type="button" value="RESTART" id="restart">
+                </div>
+                <img src="./resources/whiteScreen.png" id="whiteScreen">
+            </div>
+        </div>
+    </main>
+    <div class="turn">
+        <h2>PLEASE ROTATE <br> YOUR DEVICE</h2>
+        <div class="rotateI">
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <audio src="./resources/dog.mp3" id="dogAudio"></audio>
+    <audio src="./resources/duckFalls.mp3" id="duckAudio"></audio>
+    <audio src="./resources/failed.mp3" id="failedAudio"></audio>
+    <audio src="./resources/game.mp3" loop id="gameAudio"></audio>
+    <audio src="./resources/gameOver.mp3" id="gameOverAudio"></audio>
+    <audio src="./resources/gunShot.mp3" id="shotAudio"></audio>
+    <audio src="./resources/title.mp3" id="title"></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
+
+
+
